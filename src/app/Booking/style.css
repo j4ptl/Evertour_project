@@ -1,0 +1,544 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.arrow button{
+  width:70px;
+  height:50px;
+  border-radius: 50%;
+  cursor:pointer;
+}
+.arrow{
+  display:flex;
+  justify-content: flex-end;
+  padding-top:24px;
+  padding-right: 20px;
+}
+
+/* navbar */
+.nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+.nav li {
+    list-style-type: none;
+}
+.nav a {
+    text-decoration: none;
+    color: #1e7898;
+    font-size: 18px;
+    font-weight: 700;
+}
+.nav a:hover {
+    color: #134b5f;
+    text-decoration-line: underline;
+}
+.svg {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+}
+.nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (min-width: 1024px) {
+    .nav {
+        display: flex;
+        flex-direction: row;
+    }
+    .svg {
+        display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .nav.responsive {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background-color: #e9f5f9;
+        z-index: 1000;
+        left: 0;
+        padding-top: 1rem;
+    }
+    .nav.responsive ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .nav.responsive li {
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+    }
+    .nav.responsive a {
+        color: #134b5f;
+        width: 100%;
+    }
+    .nav a:hover {
+        color: #134b5f;
+        text-decoration-line: underline;
+    }
+}
+/* text with bg video */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    z-index: 20;
+    overflow: hidden;
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensure the text is above the video */
+    padding: 20px;
+}
+#typing-text {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.centered-text p {
+    font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+    #typing-text {
+        font-size: 3.5rem;
+    }
+    .centered-text p {
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 1024px) {
+    #typing-text {
+        font-size: 4rem;
+    }
+    .centered-text p {
+        font-size: 1.6rem;
+    }
+}
+/* destinations */
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+  }
+  .heading{
+    color:#1a566c;
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 3rem;
+  }
+  .carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out; /* Uncommented transition for smoother animation */
+  }
+  .box {
+    min-width: 350px; /* Increased min-width */
+    max-width: 400px; /* Increased max-width */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:2rem;
+  }
+  .box .image {
+    position: relative;
+  }
+  .box .image img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+  }
+  .box .image h3 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .box .content {
+    padding: 15px;
+    text-align: center;
+  }
+  .box .content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background:#134b5f;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .box .content .btn:hover {
+    background:#1e7898;
+  }
+  #left, #right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 1000;
+  }
+  #left {
+    left: 10px;
+  }
+  #right {
+    right: 10px;
+  }
+  @media (max-width: 1200px) {
+    .wrapper {
+      width: 95%;
+    }
+    .box {
+      min-width: 320px;
+      max-width: 350px;
+    }
+  }
+  @media (max-width: 992px) {
+    .box {
+      min-width: 300px;
+      max-width: 320px;
+    }
+  }
+  @media (max-width: 768px) {
+    .wrapper {
+      width: 100%;
+    }
+    .box {
+      min-width: 280px;
+      max-width: 300px;
+    }
+    .box .image img {
+      height: 250px; 
+    }
+    .box .image h3 {
+      font-size: 14px;
+    }
+    .box .content .btn {
+      padding: 8px 16px;
+    }
+  }
+  @media (max-width: 576px) {
+    .box {
+      min-width: 250px;
+      max-width: 280px;
+    }
+    .box .image img {
+      height: 220px;
+    }
+    .box .image h3 {
+      font-size: 12px;
+    }
+    .box .content .btn {
+      padding: 6px 12px;
+    }
+  }
+/* rooms range */
+.containerr {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .room-card {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer; 
+    overflow: hidden; /* Ensure content does not overflow the card */
+    transition: transform 0.3s ease; /* Added transition for hover effect */
+  }
+  .room-card:hover {
+    transform: scale(1.05); 
+  }
+  .room-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .details-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  .room-card:hover .details-popup, 
+  .room-card.active .details-popup { 
+    opacity: 1;
+    visibility: visible;
+  }
+  .details-popup h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color:#1a566c;
+  }
+  .details-popup p {
+    color: #666;
+    margin: 10px 0;
+    font-size: 1em;
+  }
+  .price {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  @media (max-width: 992px) {
+    .room-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .room-grid {
+      grid-template-columns: 1fr;
+    }
+    .details-popup {
+      padding: 15px;
+    }
+  }
+/* luxury room */
+.text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #185167;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    margin-top: 55px;
+}
+.image-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.text-section {
+    flex: 1;
+    padding: 20px;
+    z-index: 2; 
+}
+.text-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.text-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.color-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #ffc107;
+    z-index: 0;
+}
+.text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 0;
+}
+.text::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #ffc107;
+    z-index: 1;
+}
+@media (max-width: 992px) {
+    .text-section h1 {
+        font-size: 2.5rem;
+    }
+    .text-section p {
+        font-size: 1.1rem;
+    }
+    .image-section img {
+        max-width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .text {
+        flex-direction: column;
+    }
+    .text-section h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .text-section p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .image-section img {
+        max-width: 80%;
+    }
+    .text::before,
+    .text::after {
+        display: none;
+    }
+    .color-overlay {
+        width: 100%;
+        height: 30%;
+        bottom: 0;
+        top: auto;
+    }
+}
+@media (max-width: 576px) {
+    .text-section h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .text-section p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .image-section img {
+        max-width: 70%;
+    }
+    .text {
+        padding: 10px;
+    }
+    .text-section {
+        padding: 10px;
+    }
+    .image-section {
+        padding: 10px;
+    }
+    .color-overlay {
+        width: 100%;
+        height: 30%;
+        bottom: 0;
+        top: auto;
+    }
+}
+/* features */
+.containers {
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+h1{
+    font-size: 2rem;
+    text-align: center;
+}
+.core-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem; 
+    text-align: center;
+}
+.feature {
+    padding: 1rem;
+    border: 2px solid #295f74;
+    border-radius: 10px;
+    background-color: #c0e2ef;
+}
+.feature:hover{
+    background-color: #256a83;
+    color:#fff;
+    border: 2px solid #c0e2ef;
+}
+.feature h3 {
+    margin-bottom: 0.5rem;
+}
+
+
+.top{
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+    z-index: 1100;
+}
+.top i{
+    color: rgb(252, 251, 251);
+    background: rgb(16, 59, 64);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
+} 
+
+

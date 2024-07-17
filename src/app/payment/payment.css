@@ -1,0 +1,50 @@
+.card-logos img {
+    margin-right: 10px;
+    width: 50px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input,
+  select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .expiry-date {
+    display: flex;
+    justify-content: space-between;
+  }
+  .expiry-date select {
+    width: calc(50% - 5px);
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e789a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .payment-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a white background with transparency */
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top:40px;
+  }
+  body{
+    background-image: url('/pgate-bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
